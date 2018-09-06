@@ -1,3 +1,3 @@
-# starwars-names
+# pub-names
 
-For all your random Star Wars character needs
+For all your random Newcastle real ale pub needs
