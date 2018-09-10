@@ -1,9 +1,10 @@
 import uniqueRandomArray from 'unique-random-array'
+
 const pubNames = require('./pub-names.json')
 
 const mainExport = {
-  all: pubNames,
-  random: uniqueRandomArray(pubNames),
+    all: pubNames,
+    random: uniqueRandomArray(pubNames),
 }
 
 export default mainExport
