@@ -9,11 +9,12 @@ branches:
 node_js: 6
 before_install:
   - npm i -g npm@6.4
+install:
+  - npm install -g codecov
 notifications:
   email: false
 before_script:
   - npm prune
 script:
   - npm run validate
-after_success:
-  - npm run report-coverage
+  - codecov
