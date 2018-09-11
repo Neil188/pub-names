@@ -18,4 +18,6 @@ before_script:
   - npm prune
 script:
   - npm run validate
+after_success:
   - codecov
+  - npm run travis-deploy-once "npm run semantic-release"
