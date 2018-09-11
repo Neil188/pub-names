@@ -60,7 +60,6 @@
         "nyc": "^13.0.1",
         "rimraf": "^2.6.2",
         "semantic-release": "^15.9.14",
-        "travis-deploy-once": "^5.0.7",
         "webpack": "^2.7.0"
     },
     "nyc": {
