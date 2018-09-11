@@ -1,98 +1,106 @@
 {
-  "name": "@neil188/pub-names",
-  "version": "0.0.0-development",
-  "description": "Get random pub names",
-  "main": "dist/index.js",
-  "scripts": {
-    "prebuild": "rimraf dist",
-    "build": "npm-run-all --parallel build:*",
-    "build:main": "babel --copy-files --out-dir dist --ignore *.test.js src",
-    "build:umd": "webpack --output-filename index.umd.js",
-    "build:umd.min": "webpack --output-filename index.umd.min.js -p",
-    "precommit": "npm run validate",
-    "test": "cross-env NODE_ENV=test nyc mocha",
-    "watch:test": "mocha --watch",
-    "lint": "eslint src",
-    "validate": "npm-run-all --parallel test lint build",
-    "travis-deploy-once": "travis-deploy-once",
-    "semantic-release": "semantic-release"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Neil188/pub-names.git"
-  },
-  "keywords": [
-    "random",
-    "pubs"
-  ],
-  "files": [
-    "dist"
-  ],
-  "author": "N Lupton",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Neil188/pub-names/issues"
-  },
-  "homepage": "https://github.com/Neil188/pub-names#readme",
-  "dependencies": {
-    "unique-random-array": "1.0.1"
-  },
-  "devDependencies": {
-    "@neil188/eslint-config": "^1.1.2",
-    "babel-cli": "^6.26.0",
-    "babel-loader": "^7.1.5",
-    "babel-plugin-istanbul": "^5.0.1",
-    "babel-preset-env": "^1.7.0",
-    "babel-register": "^6.26.0",
-    "chai": "^4.1.2",
-    "commitizen": "^2.10.1",
-    "cross-env": "^5.2.0",
-    "cz-conventional-changelog": "^2.1.0",
-    "eslint": "^5.5.0",
-    "husky": "^0.14.3",
-    "json-loader": "^0.5.7",
-    "mocha": "^5.2.0",
-    "npm-run-all": "^4.1.3",
-    "nyc": "^13.0.1",
-    "rimraf": "^2.6.2",
-    "webpack": "^2.7.0",
-    "travis-deploy-once": "^5.0.7",
-    "semantic-release": "^15.9.14"
-  },
-  "nyc": {
-    "all": true,
-    "check-coverage": true,
-    "branches": 100,
-    "function": 100,
-    "lines": 100,
-    "statements": 100,
-    "reporter": [
-      "text",
-      "lcov"
+    "name": "@neil188/pub-names",
+    "version": "0.0.0-development",
+    "description": "Get random pub names",
+    "main": "dist/index.js",
+    "scripts": {
+        "prebuild": "rimraf dist",
+        "build": "npm-run-all --parallel build:*",
+        "build:main": "babel --copy-files --out-dir dist --ignore *.test.js src",
+        "build:umd": "webpack --output-filename index.umd.js",
+        "build:umd.min": "webpack --output-filename index.umd.min.js -p",
+        "commitmsg": "commitlint -E GIT_PARAMS",
+        "precommit": "npm run validate",
+        "test": "cross-env NODE_ENV=test nyc mocha",
+        "watch:test": "mocha --watch",
+        "lint": "eslint src",
+        "validate": "npm-run-all --parallel test lint build",
+        "travis-deploy-once": "travis-deploy-once",
+        "semantic-release": "semantic-release"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Neil188/pub-names.git"
+    },
+    "keywords": [
+        "random",
+        "pubs"
     ],
-    "include": [
-      "src"
+    "files": [
+        "dist"
     ],
-    "sourceMap": false,
-    "instrument": false,
-    "require": [
-      "babel-register"
-    ]
-  },
-  "babel": {
-    "presets": [
-      "env"
-    ],
-    "env": {
-      "test": {
-        "plugins": [
-          "istanbul"
+    "author": "N Lupton",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Neil188/pub-names/issues"
+    },
+    "homepage": "https://github.com/Neil188/pub-names#readme",
+    "dependencies": {
+        "unique-random-array": "1.0.1"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^7.1.2",
+        "@commitlint/config-conventional": "^7.1.2",
+        "@neil188/eslint-config": "^1.1.2",
+        "babel-cli": "^6.26.0",
+        "babel-loader": "^7.1.5",
+        "babel-plugin-istanbul": "^5.0.1",
+        "babel-preset-env": "^1.7.0",
+        "babel-register": "^6.26.0",
+        "chai": "^4.1.2",
+        "commitizen": "^2.10.1",
+        "cross-env": "^5.2.0",
+        "cz-conventional-changelog": "^2.1.0",
+        "eslint": "^5.5.0",
+        "husky": "^0.14.3",
+        "json-loader": "^0.5.7",
+        "mocha": "^5.2.0",
+        "npm-run-all": "^4.1.3",
+        "nyc": "^13.0.1",
+        "rimraf": "^2.6.2",
+        "semantic-release": "^15.9.14",
+        "travis-deploy-once": "^5.0.7",
+        "webpack": "^2.7.0"
+    },
+    "nyc": {
+        "all": true,
+        "check-coverage": true,
+        "branches": 100,
+        "function": 100,
+        "lines": 100,
+        "statements": 100,
+        "reporter": [
+            "text",
+            "lcov"
+        ],
+        "include": [
+            "src"
+        ],
+        "sourceMap": false,
+        "instrument": false,
+        "require": [
+            "babel-register"
         ]
-      }
+    },
+    "babel": {
+        "presets": [
+            "env"
+        ],
+        "env": {
+            "test": {
+                "plugins": [
+                    "istanbul"
+                ]
+            }
+        }
+    },
+    "engines": {
+        "node": "8.11.x",
+        "npm": "6.4.x"
+    },
+    "commitlint": {
+        "extends": [
+            "@commitlint/config-conventional"
+        ]
     }
-  },
-  "engines": {
-    "node": "8.11.x",
-    "npm": "6.4.x"
-  }
 }
